@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+
+This snippet uses light JavaScript to create a slideshow.
+
+-->
+<html>
+    <head>
+        <title>Vertically Scrolling Slideshow</title>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+
+            #body{
+                width: auto;
+                height: auto;
+                overflow: hidden;  
+                display: grid;
+                grid-template-areas: "wrapper wrapper"
+                "prev next";
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 1fr auto;
+            }
+
+            #wrapper {
+                grid-area: wrapper;
+                height: 80vh;
+                border: 1px solid black;
+                scroll-behavior: smooth;
+                display: grid;
+                grid-template-areas: 'first second third fourth fifth';
+                grid-template-columns: 100vw 100vw 100vw 100vw 100vw;
+                grid-template-rows: 1fr;
+                grid-gap: 10px;
+                overflow: hidden; /* add this to contain floated children */
+            }
+
+            a{
+                color: aliceblue;
+                text-decoration: none;
+                font-weight: 800;
+            }
+
+            .slide{
+                padding: 20% 40%;
+                text-align: center;
+                font-size: 26px;
+            }
+
+            #first {
+                grid-area: first;
+                background: url(https://images.pexels.com/photos/1883932/pexels-photo-1883932.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; 
+                background-position: center;
+                background-size: cover;
+            }
+
+            #second {
+                grid-area: second;
+                background-color: #ff4400;  
+            }
+
+            #third {
+                grid-area: third;
+                background-color: #ff2244;
+            }
+
+            #fourth {
+                grid-area: fourth;
+                background-color: #4400ff;  
+            }
+
+            #fifth {
+                grid-area: fifth;
+                background-color: #0066ff;  
+            }
+
+            #prev {
+                grid-area: prev;
+                background-color: #88f;
+            }
+
+            #next {
+                grid-area: next;
+                background-color: #48f; 
+            }
+            
+            .button{
+                padding: 20px;
+                border: 1px solid black;
+                text-align: center;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                color:white;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <div id="wrapper">
+                <div id="first" class="slide">
+                    <a href="#second">First DIV</a>
+                    <br>
+                    <br>
+                    <a href="https://www.pexels.com/photo/close-up-photography-of-green-leaf-with-water-dew-1883932/">Imagine by Maisa Borges on Pexels. Check her out</a>
+                </div>
+
+                <div id="second" class="slide"><a href="#third">Second DIV</a></div>
+
+                <div id="third" class="slide"><a href="#fourth">Third DIV</a></div>
+
+                <div id="fourth" class="slide"><a href="#fifth">Fourth DIV</a></div>
+
+                <div id="fifth" class="slide"><a href="#first">Fifth DIV</a></div>
+            </div>
+            <div id="prev" onclick="switchSlide(-1)" class="button">&#10094; Previous</div>
+            <div id="next" onclick="switchSlide(1)" class="button">Next &#10095;</div>
+        </div>
+
+
+        <script>
+            var slideIndex = 0;
+            var Slides = ["first", "second", "third", "fourth", "fifth"];
+            showSlides(slideIndex);
+
+            function switchSlide(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function showSlides(n) {
+            var i;
+
+            if (n > Slides.length - 1) {slideIndex = 0} //Remember that the array indexes start at 0 not 1
+
+            if (n < 0) {slideIndex = Slides.length - 1}
+
+            document.getElementById(Slides[slideIndex]).scrollIntoView();
+            }
+        </script>
+    </body>
+</html>
