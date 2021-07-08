@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <!--
 
-This snippet uses light JavaScript to create a slideshow.
+    This snippet uses light JavaScript to create an extremely simple slideshow.
+
+    This is done by using CSS grids to make a large vertical area in the div named wrapper"
+    and using the a tag if you click the "First DIV" text or the javascript function named scroll into view.
 
 -->
 <html>
@@ -9,47 +12,58 @@ This snippet uses light JavaScript to create a slideshow.
         <title>Vertically Scrolling Slideshow</title>
         <style>
             html {
-                scroll-behavior: smooth;
+                scroll-behavior: smooth;/*Typically I would expect this to apply to the whole document and all of the tags but unfortunately not*/
             }
 
             #body{
                 width: auto;
-                height: auto;
-                overflow: hidden;  
+                height: auto; /*We have to set a height so we can use relative measurements on it*/
+                
+                /*-- Setting up the main layout using CSS grids --*/
                 display: grid;
-                grid-template-areas: "wrapper wrapper"
-                "prev next";
-                grid-template-columns: 50% 50%;
-                grid-template-rows: 1fr auto;
+                grid-template-areas: "wrapper wrapper" /*This is describing the shape the layout will take*/
+                                       "prev next";
+                grid-template-columns: 50% 50%; /*mainly just defines the size of the buttons since there's no size on them*/
+                grid-template-rows: 1fr auto; /*The auto is because we dont care about the size of the buttons*/
             }
 
-            #wrapper {
+            a{/*Defining how the links would look*/
+                color: aliceblue;
+                text-decoration: none;
+                font-weight: 800;
+            }
+            
+            
+            /**Setting up the slides and the slideshow wrapper**/
+
+            #wrapper {/*This wrapper will hold all the slides in one continuous vertical section of the website*/
                 grid-area: wrapper;
                 height: 80vh;
                 border: 1px solid black;
-                scroll-behavior: smooth;
+                scroll-behavior: smooth;/*This gives the slide show a scrolling affect instead of the usual instant jump to another part of the website*/
+                
+                /*-- Setting up CSS grids for the slideshow --*/
                 display: grid;
                 grid-template-areas: 'first second third fourth fifth';
                 grid-template-columns: 100vw 100vw 100vw 100vw 100vw;
                 grid-template-rows: 1fr;
                 grid-gap: 10px;
-                overflow: hidden; /* add this to contain floated children */
+                overflow: hidden;/*Setting the overflow to hidden would hide the scrollbar*/ 
             }
+            
+            
 
-            a{
-                color: aliceblue;
-                text-decoration: none;
-                font-weight: 800;
-            }
-
-            .slide{
+            /*Slides*/
+            .slide{ /*Since all the slides share these properties, there were put into a class*/
                 padding: 20% 40%;
                 text-align: center;
                 font-size: 26px;
             }
 
             #first {
-                grid-area: first;
+                grid-area: first;/*This defines which part of the wrapper grid layout this slide would be*/
+                
+                /*Setting an example background to show you it can be used for actual images*/
                 background: url(https://images.pexels.com/photos/1883932/pexels-photo-1883932.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat; 
                 background-position: center;
                 background-size: cover;
@@ -75,6 +89,9 @@ This snippet uses light JavaScript to create a slideshow.
                 background-color: #0066ff;  
             }
 
+            
+            
+            /**Setting up the buttons**/
             #prev {
                 grid-area: prev;
                 background-color: #88f;
@@ -99,6 +116,7 @@ This snippet uses light JavaScript to create a slideshow.
     </head>
     <body>
         <div id="body">
+            <!--       This holds all the slides. The slides are just spaced out         -->
             <div id="wrapper">
                 <div id="first" class="slide">
                     <a href="#second">First DIV</a>
@@ -115,29 +133,39 @@ This snippet uses light JavaScript to create a slideshow.
 
                 <div id="fifth" class="slide"><a href="#first">Fifth DIV</a></div>
             </div>
+            <!--       Setting up the two buttons to control the slideshow     -->
             <div id="prev" onclick="switchSlide(-1)" class="button">&#10094; Previous</div>
-            <div id="next" onclick="switchSlide(1)" class="button">Next &#10095;</div>
+            <!--This button calls the "switchSlide" function with -1 to go back to the previous slide-->
+            <div id="next" onclick="switchSlide(1)" class="button">Next &#10095;</div><!--and 1 to go to the next slide-->
+            <!--the random codes in the button are the codes for arrows in unicode-->
         </div>
 
 
-        <script>
-            var slideIndex = 0;
-            var Slides = ["first", "second", "third", "fourth", "fifth"];
-            showSlides(slideIndex);
+        <!--    Switching Slides using Javascript    -->
+        <script>//This is a simple method for getting the div ids. It can be refactored to do this automatically and work as a drop in 
+            //plugin but that is outside of the scope of this project
+            var slideIndex = 0;//This keeps track of where the function is the slideshow
+            var Slides = ["first", "second", "third", "fourth", "fifth"];//An array of possible slides
+            //The fact the names are hardcoded means this must be changed for every website 
+            showSlides(slideIndex);//This makes sure the website loads on the first slide
 
-            function switchSlide(n) {
-            showSlides(slideIndex += n);
+            
+            function switchSlide(n) {//This is as simple as it gets for a function to switch slides
+                showSlides(slideIndex += n);//call the main display function and add the incoming number
             }
 
             function showSlides(n) {
-            var i;
+                if (n > Slides.length - 1) {slideIndex = 0} //This is making sure the incoming parameter (n) is valid (not over the possible indexs for the array)
+                //And remember that the array indexes start at 0 not 1, which is why i use "Slides.length - 1"
+                //otherwise at the "last" slide you would get an out of bounds error.
+                
+                if (n < 0) {slideIndex = Slides.length - 1}//In our program -1 would be a result from the user pressing "Previous" on the first slide.
+                //In that case send the user to the last slide (Slide.length - 1).
 
-            if (n > Slides.length - 1) {slideIndex = 0} //Remember that the array indexes start at 0 not 1
-
-            if (n < 0) {slideIndex = Slides.length - 1}
-
-            document.getElementById(Slides[slideIndex]).scrollIntoView();
+                document.getElementById(Slides[slideIndex]).scrollIntoView();//Using "scrollIntoView()" make the website scroll the referenced content into view.
+                //Even if theres no scrollbars (since "overflow:hidden")
             }
+            //There we have it, a function for JavaScript slideshows written in essentially 9 lines if you count the switchSlide function as one like I usually do.
         </script>
     </body>
 </html>
