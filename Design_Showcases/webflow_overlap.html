@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap');
+            
+            body{
+                width: 100%;
+                margin: 0;
+                display: grid;
+                grid-template-columns: 4fr 2fr 1fr;
+                grid-template-rows: auto 4fr;
+                font-family: 'Roboto';
+            }
+            
+            h2,h1{
+                font-family: 'Oswald', cursive;
+            }
+            
+            h1{
+                font-size: 4em;
+                font-weight: 900;
+            }
+            
+            #Heading{
+                grid-row: 1;
+                grid-column: 1 / span 2;
+                background: hsla(200, 84%, 54%, 1);
+                background: linear-gradient(135deg, hsla(200, 84%, 60%, 1) 7%, hsla(216, 100%, 52%, 1) 42%, hsla(220, 99%, 41%, 1) 100%);
+                z-index: 4;
+                padding: 30px;
+                margin-top: 20px;
+                box-shadow: 20px 20px 0 #00001a;
+            }
+            
+            
+           #Img{
+                grid-row: 1 /  span 2;
+                grid-column: 1 / span 3;
+                background-color: #011;
+                height: 100%;
+                background-image: linear-gradient(160deg, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 40%, hsla(333, 100%, 53%, 1) 100%),
+    url('https://images.pexels.com/photos/3396656/pexels-photo-3396656.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+            } 
+            
+            
+           #Content{
+                grid-row: 2;
+                grid-column: 1;
+                background-color: #00001a;
+                width: 100%;
+            } 
+            
+            #inner{
+                background-color: aliceblue;
+                padding: 50px;
+                margin-top: 20px;
+                margin-right: 20px;
+                box-sizing: border-box;
+            }
+            
+            #cutout{
+                font-family: 'Zilla Slab Highlight', cursive;
+                font-size: 2.7em;
+                background: hsla(0, 72%, 37%, 1);
+
+                background: linear-gradient(135deg, hsla(0, 72%, 0%, 1) 0%, hsla(20, 92%, 5%, 1) 26%, hsla(333, 100%, 53%, 1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            
+        </style>
+    </head>
+    <body>
+        <div id="Heading"><h1>Testing CSS Grids Overlap</h1></div>
+        <div id="Img"></div>
+        <div id="Content">
+            <div id="inner">
+                <h2>Using CSS Grids we can easily overlap objects</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris feugiat massa metus, ut rutrum tellus vestibulum quis. Suspendisse lacinia porta quam, ac iaculis libero mollis eu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean condimentum interdum quam, non efficitur massa cursus a. Morbi nisi purus, ultrices ut nisi eu, eleifend scelerisque mi. Donec eget nulla et quam accumsan rutrum ac quis turpis. Phasellus finibus at leo quis faucibus.
+
+    Donec feugiat nulla eget est consequat, eu mollis lorem viverra. Suspendisse vel lectus erat. Ut fermentum odio et nisl ullamcorper porttitor sed nec purus. Donec mi dui, aliquet eget facilisis in, euismod nec nibh. Maecenas laoreet iaculis libero, non tempus neque iaculis sit amet. Quisque ligula tellus, fermentum eu nisl vel, pharetra convallis nisi. Vestibulum convallis leo tellus, ac ornare libero bibendum sed. Phasellus ac luctus felis, ac dapibus magna. Maecenas viverra nec massa non auctor. Ut sem odio, tincidunt eu scelerisque ac, cursus sit amet leo. Vestibulum posuere, erat nec bibendum fringilla, justo arcu lacinia metus, eget aliquet elit felis in felis. Morbi a tristique lorem. Proin blandit odio nec dolor tempus laoreet. Curabitur pretium est sed eros viverra, suscipit interdum augue molestie. Morbi eget eros a magna luctus fermentum quis non lectus. Fusce eu velit tincidunt, euismod est ultrices, laoreet arcu.
+
+    Donec ac enim et velit imperdiet semper. Nulla mollis enim nunc, et hendrerit massa ultricies ac. Donec consectetur maximus fermentum. Donec lectus sem, lacinia sed dolor ac, elementum egestas augue. Duis id quam semper, suscipit massa non, vehicula lacus. Quisque quis porta turpis. Nullam sit amet neque vitae arcu accumsan egestas. Duis vestibulum varius ante at facilisis. Aliquam erat volutpat. Mauris faucibus aliquet sodales.
+
+    Phasellus nisl nunc, laoreet in bibendum id, pellentesque a tortor. Nulla mollis finibus felis vulputate consequat. Maecenas at neque eu risus varius maximus. In ac orci ex. Vestibulum pellentesque magna nibh. Vivamus et nunc neque. Nam finibus mi sed lorem congue consectetur. Sed fermentum ligula id neque ultricies feugiat. Donec ac tempus ante. Nullam consequat egestas sem. Mauris ut lacus sem.
+
+    Mauris eget feugiat erat. Etiam hendrerit quam felis, ut placerat lectus tristique in. Phasellus a lorem augue. Proin eu lacus justo. Morbi tincidunt orci quis lectus imperdiet tempor. Vivamus in nunc sed augue malesuada blandit mollis id nunc. Phasellus eget augue at magna vehicula semper. Proin dictum nunc ac mi ullamcorper, in accumsan odio vulputate. Praesent enim libero, consequat id tellus a, placerat placerat massa. Aenean ligula orci, gravida ut aliquet eu, gravida vehicula tortor. Vestibulum a arcu dolor. Ut ac augue felis. Sed placerat, lacus nec varius tempor, turpis enim finibus sapien, eget blandit velit augue in nulla. Donec consequat nisi quis lacus dictum vestibulum. Curabitur commodo orci pretium dictum semper. Aliquam dignissim quam ante, eget fermentum eros mattis eu.
+            </p>
+        <p id="cutout">Image credits: <a href="https://www.pexels.com/photo/architectural-photography-of-black-and-brown-house-3396656/">Josiah Farrow</a></p>
+            </div>
+        
+        
+        
+        </div>
+        
+    </body>
+</html>

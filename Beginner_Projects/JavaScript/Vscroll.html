@@ -3,13 +3,13 @@
 
     This snippet uses light JavaScript to create an extremely simple slideshow.
 
-    This is done by using CSS grids to make a large vertical area in the div named wrapper"
+    This is done by using CSS grids to make a large horizontially area in the div named wrapper"
     and using the a tag if you click the "First DIV" text or the javascript function named scroll into view.
 
 -->
 <html>
     <head>
-        <title>Vertically Scrolling Slideshow</title>
+        <title>Horizontially Scrolling Slideshow</title>
         <style>
             html {
                 scroll-behavior: smooth;/*Typically I would expect this to apply to the whole document and all of the tags but unfortunately not*/
@@ -36,7 +36,7 @@
             
             /**Setting up the slides and the slideshow wrapper**/
 
-            #wrapper {/*This wrapper will hold all the slides in one continuous vertical section of the website*/
+            #wrapper {/*This wrapper will hold all the slides in one continuous horizontially section of the website*/
                 grid-area: wrapper;
                 height: 80vh;
                 border: 1px solid black;
