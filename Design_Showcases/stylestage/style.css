@@ -133,8 +133,7 @@ header div h1 {
 }
 
 header div h2 {
-    font-size: 4vw;
-    font-size: clamp(1rem,4.5vw,3.5rem);
+    font-size: clamp(2rem,4.5vw,3.5rem);
     max-width: 24ch;
     line-height: 1.1;
     
@@ -205,12 +204,11 @@ nav ul li a:hover {
 }
 
 #about section h2, h2{
-    font-size: 3vw;
+    font-size: clamp(2rem,3vw,3rem);
     background: linear-gradient(90deg, hsla(0, 100%, 50%, 1) 0%, hsla(29, 100%, 50%, 1) 100%);  
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 
 
 blockquote {
@@ -269,17 +267,19 @@ blockquote {
 }
 
 aside{
-    padding: 1vw 30vw;
     padding-bottom: 90px;
-    background-color: #fff9;
+    background-color: #ffffff9a;
+    margin: auto;
 }
 
 aside .container{
     background-color: aliceblue;
     padding: 40px;
+    margin: auto;
     box-sizing: border-box;
     border: 1px solid #3334;
     border-radius: 5px;
+    width: clamp(300px, 80vw, 1000px);
 }
 
 
