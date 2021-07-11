@@ -262,7 +262,7 @@ blockquote {
     margin: 60px -10vw;
     border: 3px solid #00000066;
     border-style: dashed;
-    column-width: 40vw;
+    column-width: 400px;
     column-count: 2;
 }
 
