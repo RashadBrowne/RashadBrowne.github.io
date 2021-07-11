@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body onload="changeColor()">
+    <style>
+        body {
+            transition: 0.5s;
+        }
+        
+        #Main {
+            position: relative;
+            top: 80px;
+            max-width: 300px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid darkgrey;
+            box-shadow: 0 0 30px darkgrey;
+            padding: 100px;
+            text-align: center;
+        }
+        
+        #clock{
+            font-weight:300;
+            font-size:60px;
+        }
+    </style>
+    
+    <div id="Main">
+        <h1 id="clock">00 : 00 : 00</h1>
+        <p id="hex-color">#000000</p>   
+    </div>
+
+<script>
+var clock = document.getElementById('clock');
+var color = document.getElementById('hex-color');
+
+function hexclock(){
+    var time = new Date();
+    var hours = (time.getHours() % 12).toString();
+    var minutes = time.getMinutes().toString();
+    var seconds = time.getSeconds().toString();
+
+    if(hours.length < 2) {
+        hours = '0' + hours;
+    }
+
+    if(minutes.length < 2) {
+        minutes = '0' + minutes;
+    }
+
+    if(seconds.length < 2) {
+        seconds = '0' + seconds;
+    }
+
+    var clockString = hours + ' : ' + minutes + ' : ' + seconds; 
+    var hexColorString = "#" + hours + minutes + seconds;
+
+    clock.textContent = clockString;
+    color.textContent = hexColorString;
+    document.body.style.backgroundColor = hexColorString;
+}
+
+setInterval(hexclock, 1000);//https://codereview.stackexchange.com/questions/188538/clock-that-changes-document-background-color
+</script>
+</body>
+</html>

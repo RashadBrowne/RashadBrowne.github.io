@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+            :root {
+                --main-color: #F06D06;
+            }
+                
+            *{
+                margin:0;
+                padding:0;
+                font-family: roboto;
+            }
+            
+            main {
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                top: 0; bottom: 0; right: 0; left: 100px;
+                margin: auto;
+                padding: 20px;
+            }
+            
+            .label {
+                color: lightgrey;
+                position: absolute;
+                top: 18px;
+                left: 13px;
+                background-color: white;
+                transition: 0.02s;
+            }
+            
+            .input-group {
+                position: relative;
+                transition: 0.1s;
+            }
+            .input-group *{
+                transition: 0.1s;
+            }
+            
+            .input-area {
+                outline: none;
+                border: 1px solid lightgrey;   
+                padding: 16px 13px;
+                font-size: 18px;
+                border-radius: 5px;
+                transition: 0.1s;
+                width: 450px;
+            }
+            
+            .input-area:focus {
+                border: 2px solid var(--main-color);
+            }
+            
+            .input-area:focus + .label {
+                position: absolute;
+                top: -8px;
+                padding: 0 5px;
+                font-size: 16px;
+                color: var(--main-color);
+                font-weight: bold;
+            }
+            
+            .input-area:valid + .label {
+                position: absolute;
+                top: -8px;
+                padding: 0 5px;
+                font-size: 16px;
+                color: dimgrey;
+            }
+            
+            .input-area:valid:focus + .label {
+                color: var(--main-color);
+            }
+            
+            button {
+                width: 150px;
+                height 150px;
+                border-radius: 5px;
+                border: 1px solid lightgrey;
+                font-weight: bold;
+                padding: 30px 0px;
+                float: left;
+                margin: 5px;
+            }
+            
+            .grey {background-color: #ccdae8;}
+            .orange {background-color: #ff9205;}
+            .green {background-color: #00b70c;color: white}
+            .cyan {background-color: #00c3ef;}
+            .blue {background-color: #0028db; color: white}
+            .purple {background-color: #3300ef; color: white}
+            .pink {background-color: #ef00bf;color: white}
+            .red {background-color: #FF0000; color: white}
+            .black {background-color: #000000; color: white}
+        </style>
+        <script>
+            function Colour(colour){
+                document.documentElement.style.setProperty('--main-color', colour);
+            }
+        </script>
+    </head>
+    
+    <!-- Code by: https://www.youtube.com/watch?v=U8YshrNwN8I -->
+    <body>
+        <main>
+            <div class="input-group">
+                <input type="text" id="inputfield" class="input-area" required>
+                <label for="inputfield" class="label">Field</label>
+            </div>
+            <br>
+            <div id="squares">
+            </div>
+                <div id="button"><button onclick="Colour('#ccdae8')" class="grey">Grey</button></div>
+                <div id="button"><button onclick="Colour('#ff9205')" class="orange">Orange</button></div>
+                <div id="button"><button onclick="Colour('#00b70c')" class="green">Green</button></div>
+                <div id="button"><button onclick="Colour('#00c3ef')" class="cyan">Cyan</button></div>
+                <div id="button"><button onclick="Colour('#0028db')" class="blue">Blue</button></div>
+                <div id="button"><button onclick="Colour('#3300ef')" class="purple">Purple</button></div>
+                <div id="button"><button onclick="Colour('#ef00bf')" class="pink">Pink</button></div>
+                <div id="button"><button onclick="Colour('#FF0000')" class="red">Red</button></div>
+                <div id="button"><button onclick="Colour('black')" class="black">Black</button></div>
+        </main>
+    </body>
+</html>

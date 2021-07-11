@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Main</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+            body {
+                margin: 0;
+                font-size: 26px;
+                font-family:'Arial Narrow', Arial, sans-serif;
+                color: #ffffff;
+                height: 100vh;
+                overflow-x:hidden;
+                overflow-y:auto;
+            }
+
+            .p-container > *{
+                transform: scale(0.952);
+            }
+
+            .p-container{
+                width: 100vw;
+                height: 100vh;
+                padding-top: 40vh;
+                box-sizing: border-box;
+                background-color: #82c5df;
+                background-image: url("https://images.pexels.com/photos/3136672/pexels-photo-3136672.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                transform:scale(1.05); 
+                background-attachment: fixed;
+                background-repeat: no-repeat;
+            }
+
+            .regular-wrapper {
+                width: 100vw;
+                height: 100vh;
+                padding-top: 40vh;
+                box-sizing: border-box;
+                background-image: url("https://images.pexels.com/photos/6152805/pexels-photo-6152805.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                z-index: 2;
+                position: relative;
+            }
+            .regular-wrapper2 {
+                width: 100vw;
+                height: 100vh;
+                padding-top: 40vh;
+                box-sizing: border-box;
+                background-image: url("https://images.pexels.com/photos/5952099/pexels-photo-5952099.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+                z-index: 2;
+                position: relative;
+            }
+            .content {
+                margin: 0 auto;
+                padding: 50px;
+                width: 50%;
+                background-color: grey;
+            }
+
+        </style>
+    </head>
+    <body>
+                <div class="regular-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   ....
+                   .... 
+                   Donec in justo eu ligula semper consequat sed a risus.</p>
+            </div>
+        </div>
+        <div class="parallax-wrapper">
+            <div class="p-container">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   ....
+                   .... 
+                   Donec in justo eu ligula semper consequat sed a risus.</p>
+                
+            </div>
+                </div>
+        </div>
+        <div class="regular-wrapper2">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                   ....
+                   .... 
+                   Donec in justo eu ligula semper consequat sed a risus.</p>
+            </div>
+        </div>
+    
+    </body>
+</html>
