@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta name="theme-color" content="rgba(5,150,0,1)" />
+    <title>hummr</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="Icon.ico" />
+    <style>   
+        @media (max-width: 10000px) {
+            h1, h2, h3, h4, p, li {
+                font-family: Roboto; 
+            }
+            
+            h4 {font-size: 12px}
+
+            body {
+                height: 100vh;
+                margin: 0;
+                overflow: hidden;
+                transition: 0.1s;
+                --accent: #07c901;
+                --accent2: #2B0079;
+                --accent3: #001279;
+                --intenseaccent: #FF0000;
+           }
+
+            #Container {
+                height: min(1500px,100vh);
+                width: 100vw; 
+                display: grid;
+                grid-template-columns: auto clamp(200px, 200px+20vw, 600px);
+                grid-template-rows: auto 10vh;
+                grid-template-areas:
+                    'Hero Logon'
+                    'Footer Footer';
+                overflow-y: auto;
+            }
+
+            #Logon {
+                grid-area: Logon;
+                max-height: 100%;
+                background-color: #eeeeeee;
+    /* Setting up the glassmorphic design */
+                width: 400px + 0vw;
+            }
+
+            #LDetails {
+                height: 450px;
+                padding-top: 100px;
+                box-sizing: border-box;
+/*
+                max-width: 350px;
+                padding: 20px;
+*/
+                width: 400px;
+                margin: 10% auto;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.99); 
+                border: 1px solid darkgrey;
+                box-shadow: 0 0 40px #555a;
+                z-index: 5;
+                background: rgb(255,255,255,0.7);
+/*
+                position: absolute;
+                top: 0px;
+                right: 10vw;
+*/
+
+                /* Setting up the glassmorphic design */
+                backdrop-filter: blur(10px) saturate(2);
+            }
+
+            #Logo {
+                width: 80px;
+            }
+            
+            #In {
+                background-color: #2B0079;
+                color: white;
+                width: 300px;
+                height: 50px;
+                margin: auto;
+                border: 0;
+                border-radius: 15px;
+                box-shadow: 0 0 10px darkgrey;
+                font-weight: bold;
+                font-size: 15px;
+            }
+            
+            #In:hover {background-color: #120032}
+            
+            #Up {
+                background-color: #eee;
+                width: 300px;
+                height: 50px;
+                border: 1px solid #2B0079;
+                border-radius: 15px;
+                box-shadow: 0 0 10px darkgrey;
+                font-weight: bold;
+                font-size: 15px;   
+            }
+            
+            #Up:hover {background-color: #aaa}
+            
+            #Hero {
+                position: relative;
+                grid-area: Hero;
+/*                background: #07c901;*/
+/*                background: linear-gradient(90deg, rgba(5,150,0,1) 0%, rgba(7,201,1,1) 100%);*/
+                background: url(https://images.pexels.com/photos/3072141/pexels-photo-3072141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat;
+                background-size: cover; 
+            }
+
+            #HeroTxt {
+                color: white;
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                margin: auto;
+                z-index: 3;
+                width: 400px;
+                height: 180px;
+                padding: 20px;
+                line-height: 2.5;
+                font-weight: bold;
+                font-size: 20px;
+                display: none;
+            }
+            
+            #HeroImg {
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 0;
+            }
+            
+            #AntiSave {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                z-index: 4;
+                
+            }
+
+            #Footer {
+                grid-area: Footer; 
+                text-align: center;
+                padding: 5px 100px;
+                border: 1px solid darkgrey;
+                max-height: 100%;
+            }
+        }
+
+        
+/*
+        @media (max-width: 1200px) {
+            #LDetails {
+                position: absolute;
+                top: 0;bottom: 0;
+                right: 3%;
+                margin: auto;
+                height: 55%;
+            }   
+        }
+        
+     
+        @media (max-width: 1000px) {
+            #LDetails {
+                position: absolute;
+                top: 0;bottom: 0;
+                right: 6%;
+                margin: auto;
+                height: 50%; 
+            } 
+            
+            #HeroTxt {
+                font-size: 18px;
+                right:100px;
+            }  
+        }
+        
+            
+        @media (max-width: 800px) {
+            #LDetails {
+                position: absolute;
+                top: 0;bottom: 0;
+                right: 9%;
+                margin: auto;
+                max-height: 50%;
+            }
+            
+            #HeroTxt {
+                display: none;
+            }
+        }
+            
+            
+        @media (max-width: 580px) {  
+            #LDetails {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                margin: auto;
+            }            
+            
+            #Up, #In {
+                width: 250px;
+            }
+        }
+            
+        @media (max-height:580px){
+            #Container {
+                grid-template-rows: 85vh 15vh;   
+            }    
+                
+            #LDetails {
+                padding: 40px;
+            }
+            
+            #HeroImg {
+                bottom: 15vh;
+            }
+        }
+*/
+        
+    </style>
+</head>
+    
+<body>
+    <div id="Container">
+        <div id="Logon">
+            <div id="LDetails">
+                <img src="GreenT.png" id="Logo">
+                <h3>Connect with the world.</h3>
+                <a href="./Signin.html"><button type="button" id="In">Sign In</button></a>
+                <br><br>
+                <a href="./Signup.html">
+                <button type="button" id="Up">Sign Up</button></a>
+                <h4>Join hummr today</h4>
+            </div>
+        </div> 
+        <div id="Hero">   
+            <div id="AntiSave"></div>
+            <div id="HeroTxt">
+                <ul>
+                    <li>Connect with people of similar interests</li>
+                    <li>Start a discussion</li>
+                    <li>Find your interests</li>
+                </ul>
+            </div>
+<!--            <img src="GreenHero.png" id="HeroImg">-->
+
+
+        </div>
+        <div id="Footer">
+            <p>Copyright hummr - 2019</p>
+        </div>
+    </div>
+</body>
+</html>
