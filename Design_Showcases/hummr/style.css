@@ -26,6 +26,8 @@ body {
     --max-login-width: clamp(400px,50vw, 1000px);
 }
 
+
+/*--------Home Page--------*/
 #Container {
     margin: 0;
     padding: 0;
@@ -53,11 +55,10 @@ body {
     width: 400px;
     height: calc(100vh - var(--footer-height));
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.99); 
     box-shadow: 0 0 40px #555a;
-    background: rgb(255,255,255,0.7);
+    background: rgb(255,255,255,0.85);
 
-     Setting up the glassmorphic design 
+    /*    Setting up the glassmorphic design */
     backdrop-filter: blur(10px) saturate(2);
 }
 
@@ -72,16 +73,18 @@ body {
     display: flex;
 }
 
+/*
 #HeroTxt {
     box-sizing: border-box;
     margin: auto;
     z-index: 3;
     height: 180px;
     padding: 20px;
-    line-height: 1.7;
+    line-height: 1.5;
     font-size: clamp(20px,3vw,30px);
     background-color: #0000
 }
+*/
 
 span{
     background-color: #000d;
@@ -168,6 +171,12 @@ a:visited{
         width: 100vw;
         display: flex;
     }
+/*
+    
+    #HeroTxt {
+        line-height: 1.7;
+    }
+*/
 
     #Footer {
         width: 100vw;
@@ -198,8 +207,16 @@ a:visited{
         width: 100vw;
         display: flex;
     }
+    
+/*
+    #HeroTxt {
+        line-height: 1.7;
+    }
+*/
 
     #Footer {
         width: 100vw;
     }
 }
+
+/*--------Sign In Page--------*/
