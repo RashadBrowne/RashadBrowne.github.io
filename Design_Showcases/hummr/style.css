@@ -220,3 +220,46 @@ a:visited{
 }
 
 /*--------Sign In Page--------*/
+    #LDetails * {
+        transition: 0.1s;
+    }
+
+    .label {
+        position: relative;
+        top: -30px;
+        font-weight: bold;
+        font-family: roboto;
+        font-size: 14px;
+        color: #999;
+    }
+
+    .input {
+        outline: none;
+        box-sizing: border-box;
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #555;
+        border-radius: 10px;
+        width: 300px;
+        height: 40px;
+    }
+
+    .input:focus {
+        border: 2px solid var(--accent2);
+    }
+
+    .input:focus + .label {
+        position: relative;
+        top: -60px;
+        font-size: 14px;
+        color: var(--accent2);
+        font-weight: bold;
+    }
+
+    .input:valid + .label {
+        position: relative;
+        top: -60px;
+        left: -100px;
+        padding: 0 5px;
+        font-size: 14px;
+    }
