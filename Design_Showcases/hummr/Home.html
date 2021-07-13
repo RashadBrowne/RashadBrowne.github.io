@@ -7,162 +7,211 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="shortcut icon" href="Icon.ico" />
     <style>   
-        @media (max-width: 10000px) {
-            h1, h2, h3, h4, p, li {
-                font-family: Roboto; 
-            }
-            
-            h4 {font-size: 12px}
+        h1, h2, h3, h4, p, li {
+            font-family: Roboto; 
+        }
 
-            body {
-                height: 100vh;
-                margin: 0;
-/*                overflow: hidden;*/
-                transition: 0.1s;
-                background: url(https://images.pexels.com/photos/1586698/pexels-photo-1586698.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center fixed;
-                background-size: cover; 
-                --accent: #07c901;
-                --accent2: #2B0079;
-                --accent3: #001279;
-                --intenseaccent: #FF0000;
-                --footer-height:70px;
-                --max-login-width: clamp(400px,50vw, 1000px);
-           }
+        h4 {font-size: 12px}
 
-            #Container {
-                width: 100vw; 
-                height: 100vh;
-                display: flex;
-                flex-direction: row-reverse;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
+        html {
+            margin: 0;
+            padding: 0;
+        }
 
+        body {
+            height: 100vh;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            transition: 0.1s;
+            background: url(https://images.pexels.com/photos/1586698/pexels-photo-1586698.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center fixed;
+            background-size: cover; 
+            --accent: #07c901;
+            --accent2: #2B0079;
+            --accent3: #001279;
+            --intenseaccent: #FF0000;
+            --footer-height:70px;
+            --max-login-width: clamp(400px,50vw, 1000px);
+       }
+
+        #Container {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            width: 100vw; 
+            height: 100vh;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #Logon {
+            box-sizing: border-box;
+            width: clamp(100vw,var(--max-login-width));
+            height: calc(100vh - var(--footer-height));
+            display: flex;
+        }
+
+        #LDetails {
+            padding: 20px;
+            padding-top: clamp(70px,15vh,200px);
+            box-sizing: border-box;
+            text-align: center;
+            width: 400px;
+            height: calc(100vh - var(--footer-height));
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.99); 
+            box-shadow: 0 0 40px #555a;
+            background: rgb(255,255,255,0.7);
+
+             Setting up the glassmorphic design 
+            backdrop-filter: blur(10px) saturate(2);
+        }
+
+        #Logo {
+            width: 100px;
+        }
+
+        #Hero {
+            box-sizing: border-box;
+            height: calc(100vh - var(--footer-height));
+            width: calc(100vw - var(--max-login-width));
+            display: flex;
+        }
+
+        #HeroTxt {
+            box-sizing: border-box;
+            margin: auto;
+            z-index: 3;
+            height: 180px;
+            padding: 20px;
+            line-height: 1.7;
+            font-size: clamp(20px,3vw,30px);
+            background-color: #0000
+        }
+
+        span{
+            background-color: #000d;
+            color: aliceblue;
+            padding: 5px 0px;
+            font-weight: 200;
+        }
+
+        em{
+            background-color: #00f;
+            color: aliceblue;
+            padding: 5px 0px;
+            font-weight: 200;
+            font-style: normal
+        }
+
+        /*Buttons*/
+        #In {
+            background-color: #2B0079;
+            color: white;
+        }
+
+        #Up {
+            background-color: #eee; 
+        }
+
+        #In:hover {background-color: #120032}
+
+        #Up:hover {background-color: #aaa}
+
+        .button{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #2B0079;
+            border-radius: 15px;
+            box-shadow: 0 0 10px darkgrey;
+            font-weight: bold;
+            font-size: 15px;     
+        }
+
+        #Footer {
+            box-sizing: border-box;
+            grid-area: Footer; 
+            text-align: center;
+            padding: 5px 100px;
+            border-top: 1px solid darkgrey;
+            height: var(--footer-height);
+            width: 100vw;
+            margin: auto;
+            background: #fff;
+            z-index: 5;
+        }
+        
+        a{
+            text-decoration: none;
+            color: var(--accent);
+        }
+        
+        a:visited{
+            color: var(--intenseaccent)
+        }
+
+        @media (max-width: 800px){
             #Logon {
-                box-sizing: border-box;
-                width: clamp(100vw,var(--max-login-width));
-                height: calc(100vh - var(--footer-height));
-                display: flex;
+                width: 100vw;
+                height: 400px;
             }
 
             #LDetails {
-                padding: 20px;
-                padding-top: 30vh;
-                box-sizing: border-box;
-                text-align: center;
-                width: 400px;
-                height: calc(100vh - var(--footer-height));
-                margin: auto;
-                background-color: rgba(255, 255, 255, 0.99); 
-                box-shadow: 0 0 40px #555a;
-                background: rgb(255,255,255,0.7);
-
-                /* Setting up the glassmorphic design */
-                backdrop-filter: blur(10px) saturate(2);
+                padding: 40px;
+                padding-top: 70px;
+                width: 100vw;
+                height: 420px;
+                margin: 0;
             }
 
             #Logo {
                 width: 100px;
             }
-            
+
             #Hero {
                 box-sizing: border-box;
-                height: calc(100vh - var(--footer-height));
-                width: calc(100vw - var(--max-login-width));
+                height: 300px;
+                width: 100vw;
                 display: flex;
             }
 
-            #HeroTxt {
+            #Footer {
+                width: 100vw;
+            }
+        }
+
+        @media (max-height:450px){
+            #Logon {
+                width: 100vw;
+                height: 400px;
+            }
+
+            #LDetails {
+                padding: 40px;
+                padding-top: 70px;
+                width: 100vw;
+                height: 420px;
+                margin: 0;
+            }
+
+            #Logo {
+                width: 100px;
+            }
+
+            #Hero {
                 box-sizing: border-box;
-                margin: auto;
-                z-index: 3;
-                height: 180px;
-                padding: 20px;
-                line-height: 1.7;
-                font-size: clamp(20px,3vw,30px);
-                background-color: #0000
-            }
-            
-            span{
-                background-color: #000d;
-                color: aliceblue;
-                padding: 5px 0px;
-                font-weight: 200;
-            }
-            
-            em{
-                background-color: #00f;
-                color: aliceblue;
-                padding: 5px 0px;
-                font-weight: 200;
-                font-style: normal
-            }
-            
-            /*Buttons*/
-            #In {
-                background-color: #2B0079;
-                color: white;
-            }
-            
-            #Up {
-                background-color: #eee; 
-            }
-            
-            #In:hover {background-color: #120032}
-            
-            #Up:hover {background-color: #aaa}
-            
-            .button{
-                width: 300px;
-                height: 50px;
-                border: 1px solid #2B0079;
-                border-radius: 15px;
-                box-shadow: 0 0 10px darkgrey;
-                font-weight: bold;
-                font-size: 15px;     
+                height: 300px;
+                width: 100vw;
+                display: flex;
             }
 
             #Footer {
-                box-sizing: border-box;
-                grid-area: Footer; 
-                text-align: center;
-                padding: 5px 100px;
-                border: 1px solid darkgrey;
-                height: var(--footer-height);
                 width: 100vw;
-                margin: auto;
-                background: #fff;
-                z-index: 5;
             }
         }
-        
-        @media (max-width: 768px){
-                #Logon {
-                    width: 100vw;
-                    height: 400px;
-                    display: flex;
-                }
-
-                #LDetails {
-                    padding: 40px;
-                    padding-top: 70px;
-                    width: 100vw;
-                    height: 420px;
-                }
-
-                #Logo {
-                    width: 100px;
-                }
-
-                #Hero {
-                    box-sizing: border-box;
-                    height: 300px;
-                    width: 100vw;
-                    display: flex;
-                }
-        }
-
-        
     </style>
 </head>
     
@@ -179,13 +228,12 @@
             </div>
         </div> 
         <div id="Hero">   
-            <div id="AntiSave"></div>
             <div id="HeroTxt">
                 <p>
                     <span>
-                        Connect with people <em>yo </em>of similar interests <br>
-                        Start a discussion<br>
-                        Find your interests
+                        Connect with friends and family<br>
+                        Easily share your thoughts<br>
+                        Find new skills
                     </span>
                 </p>
             </div>
