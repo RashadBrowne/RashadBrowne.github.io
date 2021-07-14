@@ -248,6 +248,10 @@ a:visited{
 
 /*--------Media Queries--------*/
 @media (max-width: 400px){
+    body{
+        --footer-height:90px;
+    }
+    
     .input{
         max-width: 250px;
     }   
@@ -262,9 +266,6 @@ a:visited{
 }
 
 @media (max-width: 800px){
-    body{
-        --footer-height:100px;
-    }
     
     #SDetails{
         margin: 0;
