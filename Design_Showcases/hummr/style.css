@@ -194,6 +194,15 @@ a:visited{
         font-size: 14px;
     }
 
+    #SignIn{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        width: fit-content;
+    }
+
 
 /*--------Sign Up Page--------*/
     #SDetails{
@@ -223,6 +232,8 @@ a:visited{
         flex-wrap: wrap;
         justify-content: center;
         flex-direction: row;
+        margin: auto;
+        width: fit-content;
     }
 
     #SignUp {
@@ -236,7 +247,30 @@ a:visited{
 
 
 /*--------Media Queries--------*/
+@media (max-width: 400px){
+    .input{
+        max-width: 250px;
+    }   
+    
+    .input-area{
+        margin: 0;
+    }
+    
+    .button{
+        width: 200px;
+    }
+}
+
 @media (max-width: 800px){
+    body{
+        --footer-height:100px;
+    }
+    
+    #SDetails{
+        margin: 0;
+        height: calc(100vh - var(--footer-height));
+    }
+    
     #Logon {
         width: 100vw;
         height: 400px;
@@ -260,19 +294,16 @@ a:visited{
         width: 100vw;
         display: flex;
     }
-/*
-    
-    #HeroTxt {
-        line-height: 1.7;
-    }
-*/
+
     #SignUp{
         width: 100vw;
         height: auto;
     }   
-
-    #Footer {
-        width: 100vw;
+    
+    #Footer{
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }
 
@@ -301,17 +332,8 @@ a:visited{
         display: flex;
     }
     
-/*
-    #HeroTxt {
-        line-height: 1.7;
-    }
-*/
     #SignUp{
         width: 100vw;
         height: auto;
     }   
-
-    #Footer {
-        width: 100vw;
-    }
 }
