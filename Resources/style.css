@@ -13,21 +13,18 @@ body, html {
 
 
 html{
-    background-color: #428BFF;
-    background-image: url(MacBook%20Pro%20-%201.png);
-    background-repeat: no-repeat;
+    background-color: #000;
     
 }
 
 body{
 
     /*Centering the main div*/
-    display: grid;
     justify-content: center;/*This centers it horizontially*/
     align-items: center;
     opacity: 1;
-    grid-template-areas: "nav content";
     display: flex;
+    flex-direction: row-reverse;
 }
 
 #hide{
@@ -53,10 +50,18 @@ r{
     background-color: #010101;
     
     text-align: center;
-    position: sticky;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
-#nav p{
+#nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul li{
     font-weight: 600;
     color: #fff;
     font-size: 26;
@@ -65,7 +70,19 @@ r{
     box-sizing: border-box;
     margin: 0;
     text-transform: uppercase;
+    transition: 0.3s;
 }
+
+#nav ul li:hover{
+    background: #432bad;
+}
+
+/*
+#0055f2
+#ff5100
+#f23078
+#432bad
+*/
 
 
 #main{
