@@ -143,6 +143,10 @@ a{
 }
 
 
+
+
+
+/* Photography Section */
 #photography {
     height: 100vh;
     overflow: hidden;
@@ -152,33 +156,43 @@ a{
 
 #photocontainer {
     display: flex;
-    width: calc(100vw - 390px);
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    max-width: calc(100vw - 370px);
+    box-sizing: border-box;
+    align-items: center;
+    height: 100vh;
 }
 
-#photocontainer img{
-    width: calc(calc(100vw - 390px)/5);
+#photocontainer #photo{
+    width: calc(calc(100vw - 370px)/10);
     height: 100vh;
+    flex-shrink: 20;
+    flex-grow: 1;
     margin-top: 0px;
-    flex: 1;
     filter: grayscale(1);
 }
+    
 
-#photocontainer img:hover{
+#photocontainer #photo:hover{
     filter: grayscale(0);
     transition: 0.3s;
     box-shadow: 0px 4px 10px #000000;
-    flex-grow: 5;
-    
-       
+    flex-grow: 15;
 }
+
+#photo a img {
+    background-size:contain;
+}
+
+
+
+
+
+
 
 #designs {
     height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-22.jpg);
     scroll-snap-align: start;
-    
 }
 
 #javascript {
