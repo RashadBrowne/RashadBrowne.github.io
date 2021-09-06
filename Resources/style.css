@@ -45,16 +45,15 @@ r{
 
 
 /*   MAIN  */
+/*   NAVIGATION   */
 #nav {
     width: 370px;
     height: 100vh;
     background-color: #010101;
-    
     text-align: center;
-    flex: left;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.95);
+    z-index: 2;
+    border: 1px solid #000;
 }
 
 #nav ul{
@@ -73,17 +72,42 @@ r{
     margin: 0;
     text-transform: uppercase;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 #nav ul li:hover{
-    background: #432bad;
+    background: #333;
 }
+
+#nav ul li:active{
+    background: #432bfd;
+}
+
+a:visited{
+    color: #fff;
+}
+
+a{
+    text-decoration: none; 
+}
+
+#logo {
+    margin: auto;
+    padding: 70px;
+    cursor: pointer;
+}
+
+
+
+
+
+
 
 /*
 #0055f2
 #ff5100
 #f23078
-#432bad
+#432bfd
 */
 
 
@@ -92,11 +116,9 @@ r{
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
-#logo {
-    margin: 70px auto;
-}
 
 #hero {
     height: 100vh;
