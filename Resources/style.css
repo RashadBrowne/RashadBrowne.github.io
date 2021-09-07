@@ -109,6 +109,10 @@ a{
 #ff5100
 #f23078
 #432bfd
+
+
+
+background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 */
 
 
@@ -195,6 +199,17 @@ a{
     height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-22.jpg);
     scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    background: linear-gradient(95deg, rgba(0,103,210,1) 0%, rgba(51,0,180,1) 55%);
+    padding: 5px 20px;
+    color: white;
+    font-size: 3vw;
+    border-radius: 3px;
 }
 
 #javascript {
