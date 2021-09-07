@@ -214,12 +214,69 @@ span {
 
 #javascript {
     height: 100vh;
-    background-image: url(./JS%20Section.png);
+    background-image: url(./Images/photo_2021-09-06_00-45-41.jpg);
+    background-size: cover;
     scroll-snap-align: start;
+    padding: 60px;
+    box-sizing: border-box;
+}
+#javascript p{
+    margin-top: 50px;
+}
+
+#javascript p a {
+    background-color: #010101;
+    padding: 20px 50px;
+    color: white;
+    font: Roboto;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 1vw;
+    transition: 0.3s;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.55);
+}
+
+#javascript p a:hover{
+    background-color: #0055f2;
+    box-shadow: 0px 4px 20px rgba(0, 125, 255, 0.55);
+}
+
+
+h1 {
+    color: white;
+    font-size: 2.5vw;
 }
 
 #css {
     height: 100vh;
-    background-image: url(./JS%20Section.png);
+    background-image: url(./Images/photo_2021-09-06_00-45-41.jpg);
+    background-size: cover;
     scroll-snap-align: start;
+    padding: 60px;
+    box-sizing: border-box;
+}
+#css p{
+    margin-top: 50px;
+}
+
+#css p a {
+    background-color: #010101;
+    padding: 20px 50px;
+    color: white;
+    font: Roboto;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 1vw;
+    transition: 0.3s;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.55);
+    margin: 10px;
+}
+
+#css p a:hover{
+    background-color: #432bfd;
+    box-shadow: 0px 4px 20px rgba(55, 25, 255, 0.55);
+}
+
+#css p {
+    color: white;
 }
