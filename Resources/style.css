@@ -1,5 +1,24 @@
 /* DEVELOPMENT CODE */
+#hide{
+    display: none;
+}
+/*
+#0055f2
+#ff5100
+#f23078
+#432bfd
 
+
+
+background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
+*/
+
+
+
+
+
+/*   MAIN  */
+/*   Resetting the CSS   */
 h1, h2, h3, h4, p, li {
     font-family: Roboto; 
 }
@@ -11,40 +30,27 @@ body, html {
     margin: 0;
 }
 
+a:visited{
+    color: #fff;
+}
+
+a{
+    text-decoration: none; 
+}
+
 
 html{
-/*    background-color: #000;*/
-    
+    background-color: #000;
 }
 
 body{
-
-    /*Centering the main div*/
-    justify-content: center;/*This centers it horizontially*/
-    align-items: center;
-    opacity: 1;
     display: flex;
     flex-direction: row-reverse;
     overflow: hidden;
 }
 
-#hide{
-    max-width: 800px;
-    background-color: aliceblue;
-    padding: 40px;
-    border-radius: 5px;
-    border: 1px solid darkgrey;
-    box-sizing: border-box;
-    display: none;
-}
-
-r{
-    font-size: 14px;
-    color: #333;
-}
 
 
-/*   MAIN  */
 /*   NAVIGATION   */
 #nav {
     width: 370px;
@@ -84,14 +90,6 @@ r{
     background: #432bfd;
 }
 
-a:visited{
-    color: #fff;
-}
-
-a{
-    text-decoration: none; 
-}
-
 #logo {
     margin: auto;
     padding: 70px;
@@ -100,20 +98,6 @@ a{
 
 
 
-
-
-
-
-/*
-#0055f2
-#ff5100
-#f23078
-#432bfd
-
-
-
-background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
-*/
 
 
 #main{
@@ -125,6 +109,8 @@ background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 }
 
 
+
+/*   Hero   */
 #hero {
     height: 100vh;
     background-image: url(./Images/hero.jpg);
@@ -137,16 +123,13 @@ background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
     font-weight: 600;
     color: #fff;
     font-size: 36;
-    margin: 60px;
+    margin: 5vw;
     width: 500px;
     
     position: absolute;
     bottom: 0;
     left: 0;
-    
 }
-
-
 
 
 
@@ -159,11 +142,11 @@ background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 }
 
 #photocontainer {
+    height: 100vh;
     display: flex;
     max-width: calc(100vw - 370px);
     box-sizing: border-box;
     align-items: center;
-    height: 100vh;
 }
 
 #photocontainer #photo{
@@ -177,10 +160,10 @@ background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
     
 
 #photocontainer #photo:hover{
+    flex-grow: 15;
     filter: grayscale(0);
     transition: 0.3s;
     box-shadow: 0px 4px 10px #000000;
-    flex-grow: 15;
 }
 
 #photo a img {
@@ -190,11 +173,7 @@ background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 
 
 
-
-
-
-
-
+/* Design Section */
 #designs {
     height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-22.jpg);
@@ -212,6 +191,12 @@ span {
     border-radius: 3px;
 }
 
+
+
+
+
+
+/* JS Section */
 #javascript {
     height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-41.jpg);
@@ -220,6 +205,7 @@ span {
     padding: 60px;
     box-sizing: border-box;
 }
+
 #javascript p{
     margin-top: 50px;
 }
@@ -247,6 +233,11 @@ h1 {
     font-size: 2.5vw;
 }
 
+
+
+
+
+/* CSS Section */
 #css {
     height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-41.jpg);
@@ -255,8 +246,10 @@ h1 {
     padding: 60px;
     box-sizing: border-box;
 }
+
 #css p{
     margin-top: 50px;
+    color: white;
 }
 
 #css p a {
@@ -275,8 +268,4 @@ h1 {
 #css p a:hover{
     background-color: #432bfd;
     box-shadow: 0px 4px 20px rgba(55, 25, 255, 0.55);
-}
-
-#css p {
-    color: white;
 }
