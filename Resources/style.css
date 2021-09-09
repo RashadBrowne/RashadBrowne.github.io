@@ -1,14 +1,9 @@
 /* DEVELOPMENT CODE */
-#hide{
-    display: none;
-}
 /*
 #0055f2
 #ff5100
 #f23078
 #432bfd
-
-
 
 background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 */
@@ -28,6 +23,7 @@ body, html {
     width: 100vw;
     padding: 0;
     margin: 0;
+    background-color: #000;
 }
 
 a:visited{
@@ -38,11 +34,6 @@ a{
     text-decoration: none; 
 }
 
-
-html{
-    background-color: #000;
-}
-
 body{
     display: flex;
     flex-direction: row-reverse;
@@ -51,9 +42,17 @@ body{
 
 
 
+/*   Variables   */
+body{
+    --sidebarwidth: clamp(250px,40vw,370px);
+}
+
+
+
+
 /*   NAVIGATION   */
 #nav {
-    width: 370px;
+    width: var(--sidebarwidth);
     height: 100vh;
     background-color: #010101;
     text-align: center;
@@ -72,8 +71,8 @@ body{
 #nav ul li{
     font-weight: 600;
     color: #fff;
-    font-size: 26;
-    width: 370px;
+    font-size: clamp(20px, 3vw, 26px);
+    width: var(--sidebarwidth);
     padding: 20px;
     box-sizing: border-box;
     margin: 0;
@@ -92,7 +91,7 @@ body{
 
 #logo {
     margin: auto;
-    padding: 70px;
+    padding: 70px 0;
     cursor: pointer;
 }
 
@@ -101,9 +100,10 @@ body{
 
 
 #main{
-    width: calc(100vw - 370px);
+    width: calc(100vw - var(--sidebarwidth));
     height: 100vh;
     overflow-y: scroll;
+/*    overflow-x: hidden;*/
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
@@ -124,7 +124,7 @@ body{
     color: #fff;
     font-size: 36;
     margin: 5vw;
-    width: 500px;
+    max-width: 500px;
     
     position: absolute;
     bottom: 0;
@@ -144,13 +144,13 @@ body{
 #photocontainer {
     height: 100vh;
     display: flex;
-    max-width: calc(100vw - 370px);
+    max-width: calc(100vw - var(--sidebarwidth));
     box-sizing: border-box;
     align-items: center;
 }
 
 #photocontainer #photo{
-    width: calc(calc(100vw - 370px)/10);
+    width: calc(calc(100vw - var(--sidebarwidth))/8);
     height: 100vh;
     flex-shrink: 20;
     flex-grow: 1;
@@ -161,7 +161,7 @@ body{
     
 
 #photocontainer #photo:hover{
-    flex-grow: 15;
+    flex-grow: 10;
     filter: grayscale(0);
     transition: 0.3s;
     box-shadow: 0px 4px 10px #000000;
@@ -199,11 +199,14 @@ span {
 
 /* Code Section */
 #code {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-41.jpg);
     background-size: cover;
     scroll-snap-align: start;
     padding: 60px;
+    padding-bottom: 200px;
+    border-bottom: 10px dotted;
+    border-image: linear-gradient(95deg, rgba(0,103,210,1) 0%, rgba(51,0,180,1) 55%) 1;
     box-sizing: border-box;
 }
 
@@ -229,14 +232,49 @@ span {
 }
 
 
+#codelinks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#codelinks a {
+    background-color: #010101;
+    margin: 10px;
+    padding: 20px 50px;
+    text-align: center;
+    color: white;
+    font-family: Roboto; 
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: clamp(15px,1vw,20px);
+    transition: 0.3s;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.55);
+    min-width: 80px;
+    flex-grow: 1;
+    transition: 0.1s
+}
+
+#codelinks a:hover{
+    background-color: #0055f2;
+    box-shadow: 0px 4px 20px rgba(0, 125, 255, 0.55);
+    flex-grow: 2;
+}
+
+
+
+
+
+
+
+
 h1 {
     color: white;
-    font-size: 2.5vw;
+    font-size: clamp(25px,2.5vw,35px);
 }
 
 h2 {
     color: white;
-    font-size: 1.8vw;
+    font-size: clamp(20px,1.8vw,30px);
 }
 
 
@@ -244,33 +282,39 @@ h2 {
 
 /* CSS Section */
 #css {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(./Images/photo_2021-09-06_00-45-41.jpg);
     background-size: cover;
-    scroll-snap-align: start;
+    scroll-snap-align: start center;
     padding: 60px;
+    padding-bottom: 400px;
     box-sizing: border-box;
 }
 
-#css p{
-    margin-top: 50px;
-    color: white;
+#csslinks {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-#css p a {
+#csslinks a {
     background-color: #010101;
+    margin: 10px;
     padding: 20px 50px;
+    text-align: center;
     color: white;
-    font: Roboto;
+    font-family: Roboto; 
     border-radius: 3px;
     font-weight: bold;
-    font-size: 1vw;
+    font-size: clamp(15px,1vw,20px);
     transition: 0.3s;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.55);
-    margin: 10px;
+    min-width: 80px;
+    flex-grow: 1;
+    transition: 0.1s
 }
 
-#css p a:hover{
+#csslinks a:hover{
     background-color: #432bfd;
-    box-shadow: 0px 4px 20px rgba(55, 25, 255, 0.55);
+    box-shadow: 0px 4px 20px rgba(55, 25, 205, 0.55);
+    flex-grow: 2;
 }
