@@ -163,7 +163,7 @@ h2 {
     height: 100vh;
     flex-grow: 1;
     filter: grayscale(1);
-    transition: 0.2s;
+    transition: 0.15s ease-in-out;
 }
     
 #photocontainer #photo:hover{
