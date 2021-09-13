@@ -126,7 +126,7 @@ h2 {
 /*   Hero   */
 #hero {
     height: 100vh;
-    background-image: url(./Images/hero.jpg);
+    background-image: url(./Images/hero.webp);
     background-size: cover;
     position: relative;
     scroll-snap-align: start;
