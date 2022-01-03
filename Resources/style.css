@@ -7,6 +7,83 @@
 
 background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 */
+html{
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./Images/hero.webp);
+    background-repeat:no-repeat;
+    background-size:100vw 100vh;
+    overflow: hidden;
+    
+}
+
+
+#herotext1{
+    font-family: 'Inter', sans-serif;
+    width: clamp(200px, 100vw, 650px);
+    font-weight: 600;
+    color: #fff;
+    font-size: clamp(1.5rem, 2vw, 4rem);
+    margin: auto;
+    padding: 20px;
+    margin-top: 30vh;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.95);
+    box-sizing: border-box;
+}
+
+
+#herotext2{
+    font-family: Roboto; 
+    width: clamp(200px, 100vw, 330px);
+    font-weight: 600;
+    color: #ddd;
+    font-size: 20;
+    margin: auto;
+    padding: 20px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    box-sizing: border-box;
+}
+
+#heroWIP a {
+    background-color: aliceblue;
+    padding: 10px 20px;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#heroWIP a:hover {
+    background-color: #2211cc;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+}
+
+
+#links{
+    margin: auto;
+    width: clamp(200px, 100vw, 310px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -23,7 +100,6 @@ body, html {
     width: 100vw;
     padding: 0;
     margin: 0;
-    background-color: #000;
 }
 
 a:visited{
@@ -34,11 +110,13 @@ a{
     text-decoration: none; 
 }
 
+/*
 body{
     display: flex;
     flex-direction: row-reverse;
     overflow: hidden;
 }
+*/
 
 
 
