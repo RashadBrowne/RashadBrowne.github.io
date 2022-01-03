@@ -7,10 +7,19 @@
 
 background: linear-gradient(95deg, rgba(210,148,0,1) 0%, rgba(180,48,0,1) 55%);
 */
+
+
+
+
+
+
+
+
+/* Dev PlaceHolder */
 html{
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 }
-
+ 
 html{
     height: 100vh;
     width: 100vw;
@@ -22,8 +31,6 @@ html{
 }
 
 
-
-/* Dev PlaceHolder */
 #herotext1{
     font-family: 'Inter', sans-serif;
     width: clamp(200px, 100vw, 650px);
