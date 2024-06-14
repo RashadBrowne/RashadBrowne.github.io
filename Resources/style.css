@@ -28,6 +28,8 @@ background: #000;
     background-repeat:no-repeat;
     background-size:100vw 100vh;
     overflow: hidden;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,2,1) 0%, rgba(24,24,24,1) 90%);
     
 }
 
@@ -217,6 +219,11 @@ h2 {
     background-size: cover;
     position: relative;
     scroll-snap-align: start;
+    padding: 60px;
+    padding-bottom: 200px;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(95deg, rgba(0,103,210,1) 0%, rgba(51,0,180,1) 55%) 1;
+    box-sizing: border-box;
 }
 
 #herotext{
@@ -247,11 +254,17 @@ h2 {
     scroll-snap-align: start;
     background: rgb(2,0,36);
     background: linear-gradient(180deg, rgba(2,0,2,1) 0%, rgba(24,24,24,1) 90%);
+    padding: 60px;
+    padding-bottom: 200px;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(95deg, rgba(0,103,210,1) 0%, rgba(51,0,180,1) 55%) 1;
+    box-sizing: border-box;
 }
 
 #photocontainer{
     max-width: calc(100vw - var(--sidebarwidth));
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     height: 60vh;
 }
